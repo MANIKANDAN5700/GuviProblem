@@ -1,0 +1,16 @@
+const loginform = document.getelementbyid("login-form");
+const loginbutton = document.getelementbyid("login-form-submit");
+const loginerrormsg = document.getelementbyid("login-error-msg");
+
+loginbutton.addeventlistener("click", (e) => {
+    e.preventdefault();
+    const username = loginform.username.value;
+    const password = loginform.password.value;
+
+    if (username === "user" && password === "web_dev") {
+        alert("you have successfully logged in.");
+        location.reload();
+    } else {
+        loginerrormsg.style.opacity = 1;
+    }
+})
